@@ -16,8 +16,8 @@ $countryArray = explode(",", $countryString);
 
 $capitals = [];
 
-foreach ($countryArray as $country) {
-    $capitals [] = ['country' => $country];
+foreach ($countryArray as $countryName) {
+    $capitals [] = ['country' => $countryName];
 }
 
 var_dump($capitals);

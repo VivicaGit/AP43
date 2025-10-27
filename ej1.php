@@ -18,9 +18,9 @@ $cityArray = explode(",", $cityString);
 $capitals = [];
 
 //recorrer el array simple
-foreach ($cityArray as $city) {
+foreach ($cityArray as $cityName) {
     //añadir el array asociativo directamente
-    $capitals[] = ['city' => $city];
+    $capitals[] = ['city' => $cityName];
 }
 
 var_dump($capitals);

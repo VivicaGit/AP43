@@ -1,11 +1,3 @@
-<form method="POST" action="">
-
-    <label for="country">Country:</label><br>
-    <input type="text" name="country" required><br><br>
-    <button type="submit">Enviar</button>
-
-</form>
-
 <?php
 
 $data = [
@@ -611,16 +603,15 @@ $data = [
     ]
 ];
 
-$country = $_POST['country'];
+$totalPersonas = 0;
+$sumaEdades = 0;
 
-echo "People from " . $country . "<br>
------------------------------<br>";
 foreach ($data as $persona) {
     if ($persona['Favorites'] == "") {
-        if ($persona['Favorites'] != "") {
-            echo $persona['User'] . " likes " . $persona['Favorites'] . "<br>";
-        } else {
-            echo $persona['User'] . " likes all kinds of food<br>";
-        }
+        $totalPersonas = $totalPersonas + 1;
+        $sumaEdades += $persona['Age'];
     }
 }
+    echo "Total people with no preferences: $totalPersonas". "<br>";
+    $media = $sumaEdades / $totalPersonas;
+    echo "Average Age for people with no preferences: $media";
